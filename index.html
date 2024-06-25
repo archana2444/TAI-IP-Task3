@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtering image</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class="container">
+    <h1 class="heading">Search Image</h1>
+    <input type="text" placeholder="search images" id="search-box">
+
+    <div class="image-container">
+        <div class="image" data-title="pets">
+            <img src="pet1.jfif" alt="">
+            <h3>Pet</h3>
+        </div>
+
+        <div class="image" data-title="car">
+            <img src="car1.jpg" alt="" width="430px">
+            <h3>Sports car</h3>
+        </div>
+
+        <div class="image" data-title="food">
+            <img src="food1.jpg" alt="" width="430px">
+            <h3>Tasty Food</h3>
+        </div>
+
+        <div class="image" data-title="nature">
+            <img src="nature1.jpg" alt="" width="430px">
+            <h3>Beautiful nature</h3>
+        </div>
+
+        <div class="image" data-title="food">
+            <img src="food2.jpg" alt="" width="430px">
+            <h3>Tasty Food</h3>
+        </div>
+
+        <div class="image" data-title="car">
+            <img src="car2.jfif" alt="" width="430px">
+            <h3>Sports car</h3>
+        </div>
+
+        <div class="image" data-title="pets">
+            <img src="pet2.jfif" alt="" width="430px">
+            <h3>Pet</h3>
+        </div>
+
+        <div class="image" data-title="food">
+            <img src="food3.jpg" alt="" width="430px">
+            <h3>Tasty Food</h3>
+        </div>
+
+        <div class="image" data-title="nature">
+            <img src="nature2.jpg" alt="" width="430px">
+            <h3>Beautiful nature</h3>
+        </div>
+
+        <div class="image" data-title="pets">
+            <img src="pet3.jfif" alt="" width="430px">
+            <h3>Pet</h3>
+        </div>
+
+        <div class="image" data-title="car">
+            <img src="car3.jpg" alt="" width="430px">
+            <h3>Sports car</h3>
+        </div>
+
+        <div class="image" data-title="nature">
+            <img src="nature3.jpg" alt="" width="430px">
+            <h3>Beautiful nature</h3>
+        </div>
+
+        <div class="image" data-title="food">
+            <img src="food4.jpg" alt="" width="430px" height="250px">
+            <h3>Tasty Food</h3>
+        </div>
+
+        <div class="image" data-title="pets">
+            <img src="pet4.jfif" alt="" width="430px">
+            <h3>Pet</h3>
+        </div>
+
+        <div class="image" data-title="car">
+            <img src="car4.jpg" alt="" width="430px">
+            <h3>Sports car</h3>
+        </div>
+
+        <div class="image" data-title="nature">
+            <img src="nature4.jpg" alt="" width="430px">
+            <h3>Beautiful nature</h03>
+        </div>
+    </div>
+   </div>
+   <script>
+
+    let searchBox =  document.querySelector('#search-box');
+    let images = document.querySelectorAll('.container .image-container .image');
+
+    searchBox.oninput = () => {
+        images.forEach(hide => hide.style.display = 'none');
+        let value = searchBox.value;
+        images.forEach(filter => {
+            let title = filter.getAttribute('data-title');
+            if(value == title){
+                filter.style.display = 'block';
+            }    
+        });
+    };
+   </script>
+</body>
+</html>
